@@ -72,9 +72,9 @@ class ImmutableMappableObject: ImmutableMappable {
 	}
 
 	func mapping(map: Map) {
-		nilValue <- map["value"]
-		value	<- (map["value"], using: CodableTransform<CodableModel>())
-		arrayValue <- (map["array_value"], using: CodableTransform<[CodableModel]>())
+		nilValue <=== map["value"]
+		value	<=== (map["value"], using: CodableTransform<CodableModel>())
+		arrayValue <=== (map["array_value"], using: CodableTransform<[CodableModel]>())
 	}
 }
 

@@ -471,7 +471,7 @@ class Status: Mappable {
 	}
 
 	func mapping(map: Map) {
-		status <- map["code"]
+		status <=== map["code"]
 	}
 }
 
@@ -484,8 +484,8 @@ class Plan: Mappable {
 	}
 	
 	func mapping(map: Map) {
-		tasks <- map["tasks"]
-		dictionaryOfTasks <- map["dictionaryOfTasks"]
+		tasks <=== map["tasks"]
+		dictionaryOfTasks <=== map["dictionaryOfTasks"]
 	}
 }
 
@@ -502,8 +502,8 @@ class Task: Mappable {
 	}
 
 	func mapping(map: Map) {
-		taskId <- map["taskId"]
-		percentage <- map["percentage"]
+		taskId <=== map["taskId"]
+		percentage <=== map["percentage"]
 	}
 }
 
@@ -516,8 +516,8 @@ class TaskDictionary: Mappable {
 	}
 	
 	func mapping(map: Map) {
-		test <- map["test"]
-		tasks <- map["tasks"]
+		test <=== map["test"]
+		tasks <=== map["tasks"]
 	}
 }
 
@@ -538,10 +538,10 @@ struct Student: Mappable {
 	}
 
 	mutating func mapping(map: Map) {
-		name <- map["name"]
-		UUID <- map["UUID"]
-		major <- map["major"]
-		minor <- map["minor"]
+		name <=== map["name"]
+		UUID <=== map["UUID"]
+		major <=== map["major"]
+		minor <=== map["minor"]
 	}
 }
 
@@ -580,24 +580,24 @@ class User: Mappable {
 	}
 	
 	func mapping(map: Map) {
-		username         <- map["username"]
-		identifier       <- map["identifier"]
-		photoCount       <- map["photoCount"]
-		age              <- map["age"]
-		weight           <- map["weight"]
-		float            <- map["float"]
-		drinker          <- map["drinker"]
-		smoker           <- map["smoker"]
-		sex              <- map["sex"]
-		canDrive		 <- map["canDrive"]
-		arr              <- map["arr"]
-		arrOptional      <- map["arrOpt"]
-		dict             <- map["dict"]
-		dictOptional     <- map["dictOpt"]
-		friend           <- map["friend"]
-		friends          <- map["friends"]
-		friendDictionary <- map["friendDictionary"]
-		dictString		 <- map["dictString"]
+		username         <=== map["username"]
+		identifier       <=== map["identifier"]
+		photoCount       <=== map["photoCount"]
+		age              <=== map["age"]
+		weight           <=== map["weight"]
+		float            <=== map["float"]
+		drinker          <=== map["drinker"]
+		smoker           <=== map["smoker"]
+		sex              <=== map["sex"]
+		canDrive		 <=== map["canDrive"]
+		arr              <=== map["arr"]
+		arrOptional      <=== map["arrOpt"]
+		dict             <=== map["dict"]
+		dictOptional     <=== map["dictOpt"]
+		friend           <=== map["friend"]
+		friends          <=== map["friends"]
+		friendDictionary <=== map["friendDictionary"]
+		dictString		 <=== map["dictString"]
 	}
 }
 
@@ -616,7 +616,7 @@ class ExampleEnumArray: Mappable {
 	}
 
 	func mapping(map: Map) {
-		enums <- map["enums"]
+		enums <=== map["enums"]
 	}
 }
 
@@ -628,7 +628,7 @@ class ExampleEnumDictionary: Mappable {
 	}
 
 	func mapping(map: Map) {
-		enums <- map["enums"]
+		enums <=== map["enums"]
 	}
 }
 
@@ -639,7 +639,7 @@ class ArrayTest: Mappable {
 	required init?(map: Map){}
 	
 	func mapping(map: Map) {
-		twoDimensionalArray <- map["twoDimensionalArray"]
+		twoDimensionalArray <=== map["twoDimensionalArray"]
 	}
 }
 
@@ -652,8 +652,8 @@ class CachedModel: Mappable {
 	required init?(map: Map){}
 
 	func mapping(map: Map) {
-		name <- map["name"]
-		bigList <- map["bigList"]
+		name <=== map["name"]
+		bigList <=== map["bigList"]
 	}
 }
 
@@ -663,6 +663,6 @@ struct CachedItem: Mappable {
 	init?(map: Map){}
 
 	mutating func mapping(map: Map) {
-		name <- map["name"]
+		name <=== map["name"]
 	}
 }

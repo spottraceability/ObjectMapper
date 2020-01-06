@@ -31,7 +31,7 @@ import Foundation
 // MARK:- Transforms
 
 /// Object of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout Transform.Object, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout Transform.Object, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -53,7 +53,7 @@ public func >>> <Transform: TransformType>(left: Transform.Object, right: (Map, 
 
 
 /// Optional object of basic type with Transform
-public func <- <Transform: TransformType>(left: inout Transform.Object?, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout Transform.Object?, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -77,7 +77,7 @@ public func >>> <Transform: TransformType>(left: Transform.Object?, right: (Map,
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped optional object of basic type with Transform
-public func <- <Transform: TransformType>(left: inout Transform.Object!, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout Transform.Object!, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -91,7 +91,7 @@ public func <- <Transform: TransformType>(left: inout Transform.Object!, right: 
 #endif
 
 /// Array of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout [Transform.Object], right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [Transform.Object], right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -113,7 +113,7 @@ public func >>> <Transform: TransformType>(left: [Transform.Object], right: (Map
 
 
 /// Optional array of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout [Transform.Object]?, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [Transform.Object]?, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -137,7 +137,7 @@ public func >>> <Transform: TransformType>(left: [Transform.Object]?, right: (Ma
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped optional array of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout [Transform.Object]!, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [Transform.Object]!, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -151,7 +151,7 @@ public func <- <Transform: TransformType>(left: inout [Transform.Object]!, right
 #endif
 
 /// Dictionary of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout [String: Transform.Object], right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [String: Transform.Object], right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -173,7 +173,7 @@ public func >>> <Transform: TransformType>(left: [String: Transform.Object], rig
 
 
 /// Optional dictionary of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout [String: Transform.Object]?, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [String: Transform.Object]?, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -197,7 +197,7 @@ public func >>> <Transform: TransformType>(left: [String: Transform.Object]?, ri
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped optional dictionary of Basic type with Transform
-public func <- <Transform: TransformType>(left: inout [String: Transform.Object]!, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [String: Transform.Object]!, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -213,7 +213,7 @@ public func <- <Transform: TransformType>(left: inout [String: Transform.Object]
 // MARK:- Transforms of Mappable Objects - <T: BaseMappable>
 
 /// Object conforming to Mappable that have transforms
-public func <- <Transform: TransformType>(left: inout Transform.Object, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Transform.Object, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -235,7 +235,7 @@ public func >>> <Transform: TransformType>(left: Transform.Object, right: (Map, 
 
 
 /// Optional Mappable objects that have transforms
-public func <- <Transform: TransformType>(left: inout Transform.Object?, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Transform.Object?, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -259,7 +259,7 @@ public func >>> <Transform: TransformType>(left: Transform.Object?, right: (Map,
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped optional Mappable objects that have transforms
-public func <- <Transform: TransformType>(left: inout Transform.Object!, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Transform.Object!, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -276,7 +276,7 @@ public func <- <Transform: TransformType>(left: inout Transform.Object!, right: 
 // MARK:- Dictionary of Mappable objects with a transform - Dictionary<String, T: BaseMappable>
 
 /// Dictionary of Mappable objects <String, T: Mappable> with a transform
-public func <- <Transform: TransformType>(left: inout Dictionary<String, Transform.Object>, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Dictionary<String, Transform.Object>, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	if map.mappingType == .fromJSON && map.isKeyPresent,
 		let object = map.currentValue as? [String: Any] {
@@ -297,7 +297,7 @@ public func >>> <Transform: TransformType>(left: Dictionary<String, Transform.Ob
 
 
 /// Optional Dictionary of Mappable object <String, T: Mappable> with a transform
-public func <- <Transform: TransformType>(left: inout Dictionary<String, Transform.Object>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Dictionary<String, Transform.Object>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	if map.mappingType == .fromJSON && map.isKeyPresent, let object = map.currentValue as? [String : Any]{
 		let value = fromJSONDictionaryWithTransform(object as Any?, transform: transform) ?? left
@@ -319,7 +319,7 @@ public func >>> <Transform: TransformType>(left: Dictionary<String, Transform.Ob
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped Optional Dictionary of Mappable object <String, T: Mappable> with a transform
-public func <- <Transform: TransformType>(left: inout Dictionary<String, Transform.Object>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Dictionary<String, Transform.Object>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	if map.mappingType == .fromJSON && map.isKeyPresent, let dictionary = map.currentValue as? [String : Any]{
 		let transformedDictionary = fromJSONDictionaryWithTransform(dictionary as Any?, transform: transform) ?? left
@@ -331,7 +331,7 @@ public func <- <Transform: TransformType>(left: inout Dictionary<String, Transfo
 #endif
 
 /// Dictionary of Mappable objects <String, T: Mappable> with a transform
-public func <- <Transform: TransformType>(left: inout Dictionary<String, [Transform.Object]>, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Dictionary<String, [Transform.Object]>, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	
 	if let dictionary = map.currentValue as? [String : [Any]], map.mappingType == .fromJSON && map.isKeyPresent {
@@ -367,7 +367,7 @@ public func >>> <Transform: TransformType>(left: Dictionary<String, [Transform.O
 
 
 /// Optional Dictionary of Mappable object <String, T: Mappable> with a transform
-public func <- <Transform: TransformType>(left: inout Dictionary<String, [Transform.Object]>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Dictionary<String, [Transform.Object]>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	
 	if let dictionary = map.currentValue as? [String : [Any]], map.mappingType == .fromJSON && map.isKeyPresent {
@@ -405,7 +405,7 @@ public func >>> <Transform: TransformType>(left: Dictionary<String, [Transform.O
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped Optional Dictionary of Mappable object <String, T: Mappable> with a transform
-public func <- <Transform: TransformType>(left: inout Dictionary<String, [Transform.Object]>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Dictionary<String, [Transform.Object]>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	
 	if let dictionary = map.currentValue as? [String : [Any]], map.mappingType == .fromJSON && map.isKeyPresent {
@@ -429,7 +429,7 @@ public func <- <Transform: TransformType>(left: inout Dictionary<String, [Transf
 // MARK:- Array of Mappable objects with transforms - Array<T: BaseMappable>
 
 /// Array of Mappable objects
-public func <- <Transform: TransformType>(left: inout Array<Transform.Object>, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Array<Transform.Object>, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -452,7 +452,7 @@ public func >>> <Transform: TransformType>(left: Array<Transform.Object>, right:
 
 
 /// Optional array of Mappable objects
-public func <- <Transform: TransformType>(left: inout Array<Transform.Object>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Array<Transform.Object>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -476,7 +476,7 @@ public func >>> <Transform: TransformType>(left: Array<Transform.Object>?, right
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped Optional array of Mappable objects
-public func <- <Transform: TransformType>(left: inout Array<Transform.Object>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Array<Transform.Object>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -492,7 +492,7 @@ public func <- <Transform: TransformType>(left: inout Array<Transform.Object>!, 
 // MARK:- Array of Array of objects - Array<Array<T>>> with transforms
 
 /// Array of Array of objects with transform
-public func <- <Transform: TransformType>(left: inout [[Transform.Object]], right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [[Transform.Object]], right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .toJSON:
@@ -531,7 +531,7 @@ public func >>> <Transform: TransformType>(left: [[Transform.Object]], right: (M
 }
 
 /// Optional array of array of objects with transform
-public func <- <Transform: TransformType>(left: inout [[Transform.Object]]?, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [[Transform.Object]]?, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .toJSON:
@@ -573,7 +573,7 @@ public func >>> <Transform: TransformType>(left: [[Transform.Object]]?, right: (
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped Optional array of array of objects with transform
-public func <- <Transform: TransformType>(left: inout [[Transform.Object]]!, right: (Map, Transform)) {
+public func <=== <Transform: TransformType>(left: inout [[Transform.Object]]!, right: (Map, Transform)) {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .toJSON:
@@ -599,7 +599,7 @@ public func <- <Transform: TransformType>(left: inout [[Transform.Object]]!, rig
 // MARK:- Set of Mappable objects with a transform - Set<T: BaseMappable>
 
 /// Set of Mappable objects with transform
-public func <- <Transform: TransformType>(left: inout Set<Transform.Object>, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Set<Transform.Object>, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -622,7 +622,7 @@ public func >>> <Transform: TransformType>(left: Set<Transform.Object>, right: (
 
 
 /// Optional Set of Mappable objects with transform
-public func <- <Transform: TransformType>(left: inout Set<Transform.Object>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Set<Transform.Object>?, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
@@ -649,7 +649,7 @@ public func >>> <Transform: TransformType>(left: Set<Transform.Object>?, right: 
 // Code targeting the Swift 4.1 compiler and below.
 #if !(swift(>=4.1.50) || (swift(>=3.4) && !swift(>=4.0)))
 /// Implicitly unwrapped Optional set of Mappable objects with transform
-public func <- <Transform: TransformType>(left: inout Set<Transform.Object>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
+public func <=== <Transform: TransformType>(left: inout Set<Transform.Object>!, right: (Map, Transform)) where Transform.Object: BaseMappable {
 	let (map, transform) = right
 	switch map.mappingType {
 	case .fromJSON where map.isKeyPresent:
