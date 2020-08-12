@@ -248,6 +248,7 @@ init(map: Map) throws {
     createdAt = try map.value("createdAt", using: DateTransform()) // throws an error when it fails
     updatedAt = try? map.value("updatedAt", using: DateTransform()) // optional
     posts     = (try? map.value("posts")) ?? [] // optional + default value
+    surname    = try? map.value("surname", default: "DefaultSurname") // optional + default value as an argument
 }
 ```
 
@@ -451,6 +452,8 @@ Note: Generating a JSON string of a Realm Object using ObjectMappers' `toJSON` f
 
 - [Json4Swift - Supports generating `ImmutableMappable` structs online (no plugins needed)](http://www.json4swift.com)
 
+- [JSON to Model - Template based MacOS app which generates structs with customisation.](https://github.com/chanonly123/Json-Model-Generator)  [⬇️Download App](https://github.com/chanonly123/Json-Model-Generator/raw/master/JsonToModel.zip)
+
 If you have a project that utilizes, extends or provides tooling for ObjectMapper, please submit a PR with a link to your project in this section of the README.
 
 # To Do
@@ -468,21 +471,21 @@ Before submitting any pull request, please ensure you have run the included test
 ObjectMapper can be added to your project using [CocoaPods 0.36 or later](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
 
 ```ruby
-pod 'ObjectMapper', '~> 3.4'
+pod 'ObjectMapper', '~> 3.5' (check releases to make sure this is the latest version)
 ```
 
 ### Carthage
 If you're using [Carthage](https://github.com/Carthage/Carthage) you can add a dependency on ObjectMapper by adding it to your `Cartfile`:
 
 ```
-github "tristanhimmelman/ObjectMapper" ~> 3.4
+github "tristanhimmelman/ObjectMapper" ~> 3.5 (check releases to make sure this is the latest version)
 ```
 
 ### Swift Package Manager
 To add ObjectMapper to a [Swift Package Manager](https://swift.org/package-manager/) based project, add:
 
 ```swift
-.Package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", majorVersion: 3, minor: 4),
+.package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.1.0")),
 ```
 to your `Package.swift` files `dependencies` array.
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ObjectMapper'
-  s.version = '3.5.1'
+  s.version = '4.2.0'
   s.license = 'MIT'
   s.summary = 'JSON Object mapping written in Swift'
   s.homepage = 'https://github.com/tristanhimmelman/ObjectMapper'
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/tristanhimmelman/ObjectMapper.git', :tag => s.version.to_s }
 
   s.watchos.deployment_target = '2.0'
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.9'
   s.tvos.deployment_target = '9.0'
 
